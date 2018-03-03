@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span data-translate="kukulkanApp.persona.detail.title">Persona</span> {{vm.persona.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="kukulkanApp.persona.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.persona.nombre}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.edad">Edad</span></dt>
+        <dd>
+            <span>{{vm.persona.edad}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.numeroCredencial">Numero Credencial</span></dt>
+        <dd>
+            <span>{{vm.persona.numeroCredencial}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.sueldo">Sueldo</span></dt>
+        <dd>
+            <span>{{vm.persona.sueldo}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.impuesto">Impuesto</span></dt>
+        <dd>
+            <span>{{vm.persona.impuesto}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.impuestoDetalle">Impuesto Detalle</span></dt>
+        <dd>
+            <span>{{vm.persona.impuestoDetalle}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.activo">Activo</span></dt>
+        <dd>
+            <span>{{vm.persona.activo}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.fechaLocalDate">Fecha Local Date</span></dt>
+        <dd>
+            <span>{{vm.persona.fechaLocalDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.fechaZoneDateTime">Fecha Zone Date Time</span></dt>
+        <dd>
+            <span>{{vm.persona.fechaZoneDateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.imagen">Imagen</span></dt>
+        <dd>
+            <div ng-if="vm.persona.imagen">
+                <a ng-click="vm.openFile(vm.persona.imagenContentType, vm.persona.imagen)" data-translate="entity.action.open">open</a>
+                {{vm.persona.imagenContentType}}, {{vm.byteSize(vm.persona.imagen)}}
+            </div>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.imagenAnyBlob">Imagen Any Blob</span></dt>
+        <dd>
+            <div ng-if="vm.persona.imagenAnyBlob">
+                <a ng-click="vm.openFile(vm.persona.imagenAnyBlobContentType, vm.persona.imagenAnyBlob)" data-translate="entity.action.open">open</a>
+                {{vm.persona.imagenAnyBlobContentType}}, {{vm.byteSize(vm.persona.imagenAnyBlob)}}
+            </div>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.imagenBlob">Imagen Blob</span></dt>
+        <dd>
+            <div ng-if="vm.persona.imagenBlob">
+                <a ng-click="vm.openFile(vm.persona.imagenBlobContentType, vm.persona.imagenBlob)">
+                    <img data-ng-src="{{'data:' + vm.persona.imagenBlobContentType + ';base64,' + vm.persona.imagenBlob}}" style="max-width: 100%;" alt="persona image"/>
+                </a>
+                {{vm.persona.imagenBlobContentType}}, {{vm.byteSize(vm.persona.imagenBlob)}}
+            </div>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.desc">Desc</span></dt>
+        <dd>
+            <span>{{vm.persona.desc}}</span>
+        </dd>
+        <dt><span data-translate="kukulkanApp.persona.instante">Instante</span></dt>
+        <dd>
+            <span>{{vm.persona.instante | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="persona-detail.edit({id:vm.persona.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

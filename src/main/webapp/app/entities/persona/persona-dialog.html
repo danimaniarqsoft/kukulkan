@@ -1,0 +1,360 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPersonaLabel" data-translate="kukulkanApp.persona.home.createOrEditLabel">Create or edit a Persona</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.persona.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.persona.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.persona.nombre"
+                    required ng-minlength="3" ng-maxlength="50"/>
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.edad" for="field_edad">Edad</label>
+            <input type="number" class="form-control" name="edad" id="field_edad"
+                    ng-model="vm.persona.edad"
+                    required min="12" max="23"/>
+            <div ng-show="editForm.edad.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.edad.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.edad.$error.min" data-translate="entity.validation.min" translate-value-min="12">
+                    This field should be at least 12.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.edad.$error.max" data-translate="entity.validation.max" translate-value-max="23">
+                    This field cannot be more than 23.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.edad.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.numeroCredencial" for="field_numeroCredencial">Numero Credencial</label>
+            <input type="number" class="form-control" name="numeroCredencial" id="field_numeroCredencial"
+                    ng-model="vm.persona.numeroCredencial"
+                    required min="13" max="23"/>
+            <div ng-show="editForm.numeroCredencial.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.numeroCredencial.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.numeroCredencial.$error.min" data-translate="entity.validation.min" translate-value-min="13">
+                    This field should be at least 13.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.numeroCredencial.$error.max" data-translate="entity.validation.max" translate-value-max="23">
+                    This field cannot be more than 23.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.numeroCredencial.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.sueldo" for="field_sueldo">Sueldo</label>
+            <input type="number" class="form-control" name="sueldo" id="field_sueldo"
+                    ng-model="vm.persona.sueldo"
+                    required min="15" max="23"/>
+            <div ng-show="editForm.sueldo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.sueldo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.sueldo.$error.min" data-translate="entity.validation.min" translate-value-min="15">
+                    This field should be at least 15.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.sueldo.$error.max" data-translate="entity.validation.max" translate-value-max="23">
+                    This field cannot be more than 23.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.sueldo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.impuesto" for="field_impuesto">Impuesto</label>
+            <input type="number" class="form-control" name="impuesto" id="field_impuesto"
+                    ng-model="vm.persona.impuesto"
+                    required min="12" max="23"/>
+            <div ng-show="editForm.impuesto.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.impuesto.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.impuesto.$error.min" data-translate="entity.validation.min" translate-value-min="12">
+                    This field should be at least 12.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.impuesto.$error.max" data-translate="entity.validation.max" translate-value-max="23">
+                    This field cannot be more than 23.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.impuesto.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.impuestoDetalle" for="field_impuestoDetalle">Impuesto Detalle</label>
+            <input type="number" class="form-control" name="impuestoDetalle" id="field_impuestoDetalle"
+                    ng-model="vm.persona.impuestoDetalle"
+                    required min="11" max="23"/>
+            <div ng-show="editForm.impuestoDetalle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.impuestoDetalle.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.impuestoDetalle.$error.min" data-translate="entity.validation.min" translate-value-min="11">
+                    This field should be at least 11.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.impuestoDetalle.$error.max" data-translate="entity.validation.max" translate-value-max="23">
+                    This field cannot be more than 23.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.impuestoDetalle.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.activo" for="field_activo">Activo</label>
+                <input type="checkbox" name="activo" id="field_activo"
+                          ng-model="vm.persona.activo"/>
+            <div ng-show="editForm.activo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.activo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.fechaLocalDate" for="field_fechaLocalDate">Fecha Local Date</label>
+                <div class="input-group">
+                    <input id="field_fechaLocalDate" type="text" class="form-control" name="fechaLocalDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.persona.fechaLocalDate" is-open="vm.datePickerOpenStatus.fechaLocalDate"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fechaLocalDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.fechaLocalDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fechaLocalDate.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.fechaZoneDateTime" for="field_fechaZoneDateTime">Fecha Zone Date Time</label>
+                <div class="input-group">
+                    <input id="field_fechaZoneDateTime" type="text" class="form-control" name="fechaZoneDateTime" datetime-picker="{{dateformat}}" ng-model="vm.persona.fechaZoneDateTime" is-open="vm.datePickerOpenStatus.fechaZoneDateTime"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fechaZoneDateTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.fechaZoneDateTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fechaZoneDateTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.fechaZoneDateTime.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImagen($file, vm.persona)">
+            <label class="control-label" data-translate="kukulkanApp.persona.imagen" for="field_imagen">Imagen</label>
+            <div>
+                <div ng-if="vm.persona.imagen" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.persona.imagenContentType, vm.persona.imagen)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.persona.imagenContentType}}, {{vm.byteSize(vm.persona.imagen)}}</span>
+                    <button type="button" ng-click="vm.persona.imagen=null;vm.persona.imagenContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImagen($file, vm.persona)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                    ng-model="vm.persona.imagen"
+                    required minbytes="5" maxbytes="5000000"/>
+            <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                    ng-model="vm.persona.imagenContentType" />
+            <div ng-show="editForm.imagen.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.imagen.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.imagen.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="5">
+                    This field should be at least 5.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.imagen.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="5000000">
+                    This field cannot be more than 5000000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImagenAnyBlob($file, vm.persona)">
+            <label class="control-label" data-translate="kukulkanApp.persona.imagenAnyBlob" for="field_imagenAnyBlob">Imagen Any Blob</label>
+            <div>
+                <div ng-if="vm.persona.imagenAnyBlob" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.persona.imagenAnyBlobContentType, vm.persona.imagenAnyBlob)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.persona.imagenAnyBlobContentType}}, {{vm.byteSize(vm.persona.imagenAnyBlob)}}</span>
+                    <button type="button" ng-click="vm.persona.imagenAnyBlob=null;vm.persona.imagenAnyBlobContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImagenAnyBlob($file, vm.persona)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="imagenAnyBlob" id="field_imagenAnyBlob"
+                    ng-model="vm.persona.imagenAnyBlob"
+                    required minbytes="78" maxbytes="5000000"/>
+            <input type="hidden" class="form-control" name="imagenAnyBlobContentType" id="field_imagenAnyBlobContentType"
+                    ng-model="vm.persona.imagenAnyBlobContentType" />
+            <div ng-show="editForm.imagenAnyBlob.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.imagenAnyBlob.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.imagenAnyBlob.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="78">
+                    This field should be at least 78.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.imagenAnyBlob.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="5000000">
+                    This field cannot be more than 5000000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImagenBlob($file, vm.persona)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="kukulkanApp.persona.imagenBlob" for="field_imagenBlob">Imagen Blob</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.persona.imagenBlobContentType + ';base64,' + vm.persona.imagenBlob}}" style="max-height: 100px;" ng-if="vm.persona.imagenBlob" alt="persona image"/>
+                <div ng-if="vm.persona.imagenBlob" class="help-block clearfix">
+                    <span class="pull-left">{{vm.persona.imagenBlobContentType}}, {{vm.byteSize(vm.persona.imagenBlob)}}</span>
+                    <button type="button" ng-click="vm.persona.imagenBlob=null;vm.persona.imagenBlobContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImagenBlob($file, vm.persona)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="imagenBlob" id="field_imagenBlob"
+                    ng-model="vm.persona.imagenBlob"
+                    required minbytes="21" maxbytes="5000000"/>
+            <input type="hidden" class="form-control" name="imagenBlobContentType" id="field_imagenBlobContentType"
+                    ng-model="vm.persona.imagenBlobContentType" />
+            <div ng-show="editForm.imagenBlob.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.imagenBlob.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.imagenBlob.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="21">
+                    This field should be at least 21.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.imagenBlob.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="5000000">
+                    This field cannot be more than 5000000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.desc" for="field_desc">Desc</label>
+                <textarea class="form-control" name="desc" id="field_desc"
+                    ng-model="vm.persona.desc" required minbytes="3" maxbytes="5000000"></textarea>
+            <div ng-show="editForm.desc.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.desc.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.desc.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="3">
+                    This field should be at least 3.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.desc.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="5000000">
+                    This field cannot be more than 5000000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkanApp.persona.instante" for="field_instante">Instante</label>
+                <div class="input-group">
+                    <input id="field_instante" type="text" class="form-control" name="instante" datetime-picker="{{dateformat}}" ng-model="vm.persona.instante" is-open="vm.datePickerOpenStatus.instante"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('instante')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.instante.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.instante.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.instante.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+{
+    "kukulkanApp": {
+        "persona" : {
+            "home": {
+                "title": "Personas",
+                "createLabel": "Crear nuevo Persona",
+                "createOrEditLabel": "Crear o editar Persona"
+            },
+            "created": "Un nuevo Persona ha sido creado con el identificador {{ param }}",
+            "updated": "Un Persona ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Persona ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Persona {{ id }}?"
+            },
+            "detail": {
+                "title": "Persona"
+            },
+            "nombre": "Nombre",
+            "edad": "Edad",
+            "numeroCredencial": "Numero Credencial",
+            "sueldo": "Sueldo",
+            "impuesto": "Impuesto",
+            "impuestoDetalle": "Impuesto Detalle",
+            "activo": "Activo",
+            "fechaLocalDate": "Fecha Local Date",
+            "fechaZoneDateTime": "Fecha Zone Date Time",
+            "imagen": "Imagen",
+            "imagenAnyBlob": "Imagen Any Blob",
+            "imagenBlob": "Imagen Blob",
+            "desc": "Desc",
+            "instante": "Instante"
+        }
+    }
+}
