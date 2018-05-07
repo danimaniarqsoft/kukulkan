@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180507204535",
+    "entityTableName": "direccion",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

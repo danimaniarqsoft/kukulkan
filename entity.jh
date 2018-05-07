@@ -1,16 +1,40 @@
-entity Persona {
-    nombre String required minlength(3) maxlength(50),
-    edad Integer required min(12) max(23),
-    numeroCredencial Long required min(13) max(23),
-    sueldo BigDecimal required min(15) max(23),
-    impuesto Float required min(12) max(23),
-    impuestoDetalle Double required min(11) max(23),
-    activo Boolean required,
-    fechaLocalDate LocalDate required,
-    fechaZoneDateTime ZonedDateTime required,
-    imagen Blob required minbytes(5) maxbytes(5000000),
-    imagenAnyBlob AnyBlob required minbytes(78) maxbytes(5000000),
-    imagenBlob ImageBlob required minbytes(21) maxbytes(5000000),
-    desc TextBlob required minbytes(3) maxbytes(5000000),
-    instante Instant required
+
+entity Departamento {
+	name String
 }
+
+entity Empleado {
+	name String
+}
+
+entity Direccion {
+	name String
+}
+
+entity Trabajo {
+	name String
+}
+
+entity Tarea {
+	name String
+}
+
+relationship OneToOne {
+    Empleado{direccion} to Direccion
+}
+
+relationship OneToMany {
+	Empleado{trabajo} to Trabajo,
+	Departamento{empleado} to Empleado
+}
+
+relationship ManyToOne {
+	Empleado{manager} to Empleado
+}
+
+relationship ManyToMany {
+	Trabajo{tarea(name)} to Tarea{trabajo}
+}
+
+paginate Departamento, Empleado, Direccion, Trabajo, Tarea with pagination
+service all with serviceImpl

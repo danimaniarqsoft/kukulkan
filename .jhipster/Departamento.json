@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "empleado",
+            "otherEntityName": "empleado",
+            "otherEntityRelationshipName": "departamento"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180507204533",
+    "entityTableName": "departamento",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

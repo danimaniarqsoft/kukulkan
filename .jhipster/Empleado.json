@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "departamento",
+            "otherEntityName": "departamento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "direccion",
+            "otherEntityName": "direccion",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "empleado"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "trabajo",
+            "otherEntityName": "trabajo",
+            "otherEntityRelationshipName": "empleado"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "manager",
+            "otherEntityName": "empleado",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180507204534",
+    "entityTableName": "empleado",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "empleado",
+            "otherEntityName": "empleado",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "trabajo",
+            "relationshipName": "tarea",
+            "otherEntityName": "tarea",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180507204536",
+    "entityTableName": "trabajo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

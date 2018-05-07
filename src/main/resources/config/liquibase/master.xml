@@ -6,6 +6,13 @@
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180303185222_added_entity_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180507204533_added_entity_Departamento.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180507204534_added_entity_Empleado.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180507204535_added_entity_Direccion.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180507204536_added_entity_Trabajo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180507204537_added_entity_Tarea.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20180507204534_added_entity_constraints_Empleado.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180507204536_added_entity_constraints_Trabajo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
