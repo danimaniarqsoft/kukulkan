@@ -1,13 +1,10 @@
 package mx.infotec.dads.archetype.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -26,11 +23,6 @@ public class Departamento implements Serializable {
 
     @Column(name = "name")
     private String name;
-
-    @OneToMany(mappedBy = "departamento")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Empleado> empleados = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -51,31 +43,6 @@ public class Departamento implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set<Empleado> getEmpleados() {
-        return empleados;
-    }
-
-    public Departamento empleados(Set<Empleado> empleados) {
-        this.empleados = empleados;
-        return this;
-    }
-
-    public Departamento addEmpleado(Empleado empleado) {
-        this.empleados.add(empleado);
-        empleado.setDepartamento(this);
-        return this;
-    }
-
-    public Departamento removeEmpleado(Empleado empleado) {
-        this.empleados.remove(empleado);
-        empleado.setDepartamento(null);
-        return this;
-    }
-
-    public void setEmpleados(Set<Empleado> empleados) {
-        this.empleados = empleados;
     }
 
     @Override

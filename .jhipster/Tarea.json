@@ -3,10 +3,10 @@
     "relationships": [
         {
             "relationshipType": "many-to-many",
-            "relationshipName": "trabajo",
-            "otherEntityName": "trabajo",
+            "relationshipName": "empleado",
+            "otherEntityName": "empleado",
             "ownerSide": false,
-            "otherEntityRelationshipName": "tarea"
+            "otherEntityRelationshipName": "task"
         }
     ],
     "fields": [

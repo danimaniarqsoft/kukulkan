@@ -16,8 +16,7 @@
                 "title": "Trabajo"
             },
             "name": "Name",
-            "empleado": "Empleado",
-            "tarea": "Tarea"
+            "empleado": "Empleado"
         }
     }
 }

@@ -16,10 +16,10 @@
                 "title": "Empleado"
             },
             "name": "Name",
-            "departamento": "Departamento",
-            "direccion": "Direccion",
-            "trabajo": "Trabajo",
-            "manager": "Manager"
+            "address": "Address",
+            "job": "Job",
+            "apartment": "Apartment",
+            "task": "Task"
         }
     }
 }

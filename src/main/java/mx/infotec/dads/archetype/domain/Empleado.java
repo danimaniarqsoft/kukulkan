@@ -27,20 +27,24 @@ public class Empleado implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    private Departamento departamento;
-
     @OneToOne
     @JoinColumn(unique = true)
-    private Direccion direccion;
+    private Direccion address;
 
     @OneToMany(mappedBy = "empleado")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Trabajo> trabajos = new HashSet<>();
+    private Set<Trabajo> jobs = new HashSet<>();
 
     @ManyToOne
-    private Empleado manager;
+    private Departamento apartment;
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "empleado_task",
+               joinColumns = @JoinColumn(name="empleados_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="tasks_id", referencedColumnName="id"))
+    private Set<Tarea> tasks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -63,68 +67,80 @@ public class Empleado implements Serializable {
         this.name = name;
     }
 
-    public Departamento getDepartamento() {
-        return departamento;
+    public Direccion getAddress() {
+        return address;
     }
 
-    public Empleado departamento(Departamento departamento) {
-        this.departamento = departamento;
+    public Empleado address(Direccion direccion) {
+        this.address = direccion;
         return this;
     }
 
-    public void setDepartamento(Departamento departamento) {
-        this.departamento = departamento;
+    public void setAddress(Direccion direccion) {
+        this.address = direccion;
     }
 
-    public Direccion getDireccion() {
-        return direccion;
+    public Set<Trabajo> getJobs() {
+        return jobs;
     }
 
-    public Empleado direccion(Direccion direccion) {
-        this.direccion = direccion;
+    public Empleado jobs(Set<Trabajo> trabajos) {
+        this.jobs = trabajos;
         return this;
     }
 
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-
-    public Set<Trabajo> getTrabajos() {
-        return trabajos;
-    }
-
-    public Empleado trabajos(Set<Trabajo> trabajos) {
-        this.trabajos = trabajos;
-        return this;
-    }
-
-    public Empleado addTrabajo(Trabajo trabajo) {
-        this.trabajos.add(trabajo);
+    public Empleado addJob(Trabajo trabajo) {
+        this.jobs.add(trabajo);
         trabajo.setEmpleado(this);
         return this;
     }
 
-    public Empleado removeTrabajo(Trabajo trabajo) {
-        this.trabajos.remove(trabajo);
+    public Empleado removeJob(Trabajo trabajo) {
+        this.jobs.remove(trabajo);
         trabajo.setEmpleado(null);
         return this;
     }
 
-    public void setTrabajos(Set<Trabajo> trabajos) {
-        this.trabajos = trabajos;
+    public void setJobs(Set<Trabajo> trabajos) {
+        this.jobs = trabajos;
     }
 
-    public Empleado getManager() {
-        return manager;
+    public Departamento getApartment() {
+        return apartment;
     }
 
-    public Empleado manager(Empleado empleado) {
-        this.manager = empleado;
+    public Empleado apartment(Departamento departamento) {
+        this.apartment = departamento;
         return this;
     }
 
-    public void setManager(Empleado empleado) {
-        this.manager = empleado;
+    public void setApartment(Departamento departamento) {
+        this.apartment = departamento;
+    }
+
+    public Set<Tarea> getTasks() {
+        return tasks;
+    }
+
+    public Empleado tasks(Set<Tarea> tareas) {
+        this.tasks = tareas;
+        return this;
+    }
+
+    public Empleado addTask(Tarea tarea) {
+        this.tasks.add(tarea);
+        tarea.getEmpleados().add(this);
+        return this;
+    }
+
+    public Empleado removeTask(Tarea tarea) {
+        this.tasks.remove(tarea);
+        tarea.getEmpleados().remove(this);
+        return this;
+    }
+
+    public void setTasks(Set<Tarea> tareas) {
+        this.tasks = tareas;
     }
 
     @Override

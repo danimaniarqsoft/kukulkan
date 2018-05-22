@@ -14,16 +14,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="empleado"/>
 
-        <addForeignKeyConstraint baseColumnNames="trabajos_id"
-                                 baseTableName="trabajo_tarea"
-                                 constraintName="fk_trabajo_tarea_trabajos_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="trabajo"/>
-        <addForeignKeyConstraint baseColumnNames="tareas_id"
-                                 baseTableName="trabajo_tarea"
-                                 constraintName="fk_trabajo_tarea_tareas_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="tarea"/>
-        
     </changeSet>
 </databaseChangeLog>

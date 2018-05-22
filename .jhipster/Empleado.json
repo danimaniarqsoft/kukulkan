@@ -2,14 +2,8 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipName": "departamento",
-            "otherEntityName": "departamento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
             "relationshipType": "one-to-one",
-            "relationshipName": "direccion",
+            "relationshipName": "address",
             "otherEntityName": "direccion",
             "otherEntityField": "id",
             "ownerSide": true,
@@ -17,15 +11,23 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "trabajo",
+            "relationshipName": "job",
             "otherEntityName": "trabajo",
             "otherEntityRelationshipName": "empleado"
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "manager",
-            "otherEntityName": "empleado",
+            "relationshipName": "apartment",
+            "otherEntityName": "departamento",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "empleado",
+            "relationshipName": "task",
+            "otherEntityName": "tarea",
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "fields": [

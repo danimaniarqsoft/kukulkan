@@ -21,22 +21,20 @@
         </div>
 
         <div class="form-group">
-            <label data-translate="kukulkanApp.empleado.departamento" for="field_departamento">Departamento</label>
-            <select class="form-control" id="field_departamento" name="departamento" ng-model="vm.empleado.departamento" ng-options="departamento as departamento.id for departamento in vm.departamentos track by departamento.id">
+            <label data-translate="kukulkanApp.empleado.address" for="field_address">Address</label>
+            <select class="form-control" id="field_address" name="address" ng-model="vm.empleado.address" ng-options="direccion as direccion.id for direccion in vm.addresses | orderBy:'id' track by direccion.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
-            <label data-translate="kukulkanApp.empleado.direccion" for="field_direccion">Direccion</label>
-            <select class="form-control" id="field_direccion" name="direccion" ng-model="vm.empleado.direccion" ng-options="direccion as direccion.id for direccion in vm.direccions | orderBy:'id' track by direccion.id">
+            <label data-translate="kukulkanApp.empleado.apartment" for="field_apartment">Apartment</label>
+            <select class="form-control" id="field_apartment" name="apartment" ng-model="vm.empleado.apartment" ng-options="departamento as departamento.id for departamento in vm.departamentos track by departamento.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
-            <label data-translate="kukulkanApp.empleado.manager" for="field_manager">Manager</label>
-            <select class="form-control" id="field_manager" name="manager" ng-model="vm.empleado.manager" ng-options="empleado as empleado.id for empleado in vm.empleados track by empleado.id">
-                <option value=""></option>
-            </select>
+            <label data-translate="kukulkanApp.empleado.task" for="field_task">Task</label>
+            <select class="form-control" id="field_task" multiple name="task" ng-model="vm.empleado.tasks" ng-options="tarea as tarea.id for tarea in vm.tareas track by tarea.id"></select>
         </div>
     </div>
     <div class="modal-footer">

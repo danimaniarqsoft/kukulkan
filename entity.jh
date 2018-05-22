@@ -20,20 +20,19 @@ entity Tarea {
 }
 
 relationship OneToOne {
-    Empleado{direccion} to Direccion
+    Empleado{address} to Direccion
 }
 
 relationship OneToMany {
-	Empleado{trabajo} to Trabajo,
-	Departamento{empleado} to Empleado
+	Empleado{job} to Trabajo
 }
 
 relationship ManyToOne {
-	Empleado{manager} to Empleado
+	Empleado{apartment} to Departamento
 }
 
 relationship ManyToMany {
-	Trabajo{tarea(name)} to Tarea{trabajo}
+	Empleado{task} to Tarea{empleado}
 }
 
 paginate Departamento, Empleado, Direccion, Trabajo, Tarea with pagination

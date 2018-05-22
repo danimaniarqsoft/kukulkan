@@ -5,15 +5,14 @@
         .module('kukulkanApp')
         .controller('DepartamentoDialogController', DepartamentoDialogController);
 
-    DepartamentoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Departamento', 'Empleado'];
+    DepartamentoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Departamento'];
 
-    function DepartamentoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Departamento, Empleado) {
+    function DepartamentoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Departamento) {
         var vm = this;
 
         vm.departamento = entity;
         vm.clear = clear;
         vm.save = save;
-        vm.empleados = Empleado.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

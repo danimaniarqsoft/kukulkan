@@ -20,9 +20,8 @@
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span data-translate="kukulkanApp.empleado.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="departamento.id"><span data-translate="kukulkanApp.empleado.departamento">Departamento</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="direccion.id"><span data-translate="kukulkanApp.empleado.direccion">Direccion</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="manager.id"><span data-translate="kukulkanApp.empleado.manager">Manager</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="address.id"><span data-translate="kukulkanApp.empleado.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="apartment.id"><span data-translate="kukulkanApp.empleado.apartment">Apartment</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,13 +30,10 @@
                     <td><a ui-sref="empleado-detail({id:empleado.id})">{{empleado.id}}</a></td>
                     <td>{{empleado.name}}</td>
                     <td>
-                        <a ui-sref="departamento-detail({id:empleado.departamento.id})">{{empleado.departamento.id}}</a>
+                        <a ui-sref="direccion-detail({id:empleado.address.id})">{{empleado.address.id}}</a>
                     </td>
                     <td>
-                        <a ui-sref="direccion-detail({id:empleado.direccion.id})">{{empleado.direccion.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="empleado-detail({id:empleado.manager.id})">{{empleado.manager.id}}</a>
+                        <a ui-sref="departamento-detail({id:empleado.apartment.id})">{{empleado.apartment.id}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

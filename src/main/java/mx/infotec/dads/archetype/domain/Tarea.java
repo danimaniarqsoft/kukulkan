@@ -27,10 +27,10 @@ public class Tarea implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy = "tareas")
+    @ManyToMany(mappedBy = "tasks")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Trabajo> trabajos = new HashSet<>();
+    private Set<Empleado> empleados = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -53,29 +53,29 @@ public class Tarea implements Serializable {
         this.name = name;
     }
 
-    public Set<Trabajo> getTrabajos() {
-        return trabajos;
+    public Set<Empleado> getEmpleados() {
+        return empleados;
     }
 
-    public Tarea trabajos(Set<Trabajo> trabajos) {
-        this.trabajos = trabajos;
+    public Tarea empleados(Set<Empleado> empleados) {
+        this.empleados = empleados;
         return this;
     }
 
-    public Tarea addTrabajo(Trabajo trabajo) {
-        this.trabajos.add(trabajo);
-        trabajo.getTareas().add(this);
+    public Tarea addEmpleado(Empleado empleado) {
+        this.empleados.add(empleado);
+        empleado.getTasks().add(this);
         return this;
     }
 
-    public Tarea removeTrabajo(Trabajo trabajo) {
-        this.trabajos.remove(trabajo);
-        trabajo.getTareas().remove(this);
+    public Tarea removeEmpleado(Empleado empleado) {
+        this.empleados.remove(empleado);
+        empleado.getTasks().remove(this);
         return this;
     }
 
-    public void setTrabajos(Set<Trabajo> trabajos) {
-        this.trabajos = trabajos;
+    public void setEmpleados(Set<Empleado> empleados) {
+        this.empleados = empleados;
     }
 
     @Override

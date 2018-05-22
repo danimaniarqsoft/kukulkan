@@ -5,9 +5,9 @@
         .module('kukulkanApp')
         .controller('TrabajoDetailController', TrabajoDetailController);
 
-    TrabajoDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Trabajo', 'Empleado', 'Tarea'];
+    TrabajoDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Trabajo', 'Empleado'];
 
-    function TrabajoDetailController($scope, $rootScope, $stateParams, previousState, entity, Trabajo, Empleado, Tarea) {
+    function TrabajoDetailController($scope, $rootScope, $stateParams, previousState, entity, Trabajo, Empleado) {
         var vm = this;
 
         vm.trabajo = entity;

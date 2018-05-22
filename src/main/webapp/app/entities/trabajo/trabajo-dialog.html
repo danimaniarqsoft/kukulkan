@@ -26,10 +26,6 @@
                 <option value=""></option>
             </select>
         </div>
-        <div class="form-group">
-            <label data-translate="kukulkanApp.trabajo.tarea" for="field_tarea">Tarea</label>
-            <select class="form-control" id="field_tarea" multiple name="tarea" ng-model="vm.trabajo.tareas" ng-options="tarea as tarea.name for tarea in vm.tareas track by tarea.id"></select>
-        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

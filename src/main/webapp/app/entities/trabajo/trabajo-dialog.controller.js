@@ -5,16 +5,15 @@
         .module('kukulkanApp')
         .controller('TrabajoDialogController', TrabajoDialogController);
 
-    TrabajoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Trabajo', 'Empleado', 'Tarea'];
+    TrabajoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Trabajo', 'Empleado'];
 
-    function TrabajoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Trabajo, Empleado, Tarea) {
+    function TrabajoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Trabajo, Empleado) {
         var vm = this;
 
         vm.trabajo = entity;
         vm.clear = clear;
         vm.save = save;
         vm.empleados = Empleado.query();
-        vm.tareas = Tarea.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

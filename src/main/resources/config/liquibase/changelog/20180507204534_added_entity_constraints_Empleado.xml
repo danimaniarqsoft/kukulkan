@@ -8,23 +8,28 @@
     -->
     <changeSet id="20180507204534-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="departamento_id"
+        <addForeignKeyConstraint baseColumnNames="address_id"
                                  baseTableName="empleado"
-                                 constraintName="fk_empleado_departamento_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="departamento"/>
-
-        <addForeignKeyConstraint baseColumnNames="direccion_id"
-                                 baseTableName="empleado"
-                                 constraintName="fk_empleado_direccion_id"
+                                 constraintName="fk_empleado_address_id"
                                  referencedColumnNames="id"
                                  referencedTableName="direccion"/>
 
-        <addForeignKeyConstraint baseColumnNames="manager_id"
+        <addForeignKeyConstraint baseColumnNames="apartment_id"
                                  baseTableName="empleado"
-                                 constraintName="fk_empleado_manager_id"
+                                 constraintName="fk_empleado_apartment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="departamento"/>
+
+        <addForeignKeyConstraint baseColumnNames="empleados_id"
+                                 baseTableName="empleado_task"
+                                 constraintName="fk_empleado_task_empleados_id"
                                  referencedColumnNames="id"
                                  referencedTableName="empleado"/>
-
+        <addForeignKeyConstraint baseColumnNames="tasks_id"
+                                 baseTableName="empleado_task"
+                                 constraintName="fk_empleado_task_tasks_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tarea"/>
+        
     </changeSet>
 </databaseChangeLog>

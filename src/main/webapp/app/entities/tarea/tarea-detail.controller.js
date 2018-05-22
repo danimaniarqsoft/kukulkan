@@ -5,9 +5,9 @@
         .module('kukulkanApp')
         .controller('TareaDetailController', TareaDetailController);
 
-    TareaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Tarea', 'Trabajo'];
+    TareaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Tarea', 'Empleado'];
 
-    function TareaDetailController($scope, $rootScope, $stateParams, previousState, entity, Tarea, Trabajo) {
+    function TareaDetailController($scope, $rootScope, $stateParams, previousState, entity, Tarea, Empleado) {
         var vm = this;
 
         vm.tarea = entity;

@@ -8,17 +8,19 @@
         <dd>
             <span>{{vm.empleado.name}}</span>
         </dd>
-        <dt><span data-translate="kukulkanApp.empleado.departamento">Departamento</span></dt>
+        <dt><span data-translate="kukulkanApp.empleado.address">Address</span></dt>
         <dd>
-            <a ui-sref="departamento-detail({id:vm.empleado.departamento.id})">{{vm.empleado.departamento.id}}</a>
+            <a ui-sref="direccion-detail({id:vm.empleado.address.id})">{{vm.empleado.address.id}}</a>
         </dd>
-        <dt><span data-translate="kukulkanApp.empleado.direccion">Direccion</span></dt>
+        <dt><span data-translate="kukulkanApp.empleado.apartment">Apartment</span></dt>
         <dd>
-            <a ui-sref="direccion-detail({id:vm.empleado.direccion.id})">{{vm.empleado.direccion.id}}</a>
+            <a ui-sref="departamento-detail({id:vm.empleado.apartment.id})">{{vm.empleado.apartment.id}}</a>
         </dd>
-        <dt><span data-translate="kukulkanApp.empleado.manager">Manager</span></dt>
+        <dt><span data-translate="kukulkanApp.empleado.task">Task</span></dt>
         <dd>
-            <a ui-sref="empleado-detail({id:vm.empleado.manager.id})">{{vm.empleado.manager.id}}</a>
+            <span ng-repeat="task in vm.empleado.tasks">
+                <a ui-sref="tarea-detail({id: task.id})">{{task.id}}</a>{{$last ? '' : ', '}}
+            </span>
         </dd>
     </dl>
 

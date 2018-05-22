@@ -12,12 +12,6 @@
         <dd>
             <a ui-sref="empleado-detail({id:vm.trabajo.empleado.id})">{{vm.trabajo.empleado.id}}</a>
         </dd>
-        <dt><span data-translate="kukulkanApp.trabajo.tarea">Tarea</span></dt>
-        <dd>
-            <span ng-repeat="tarea in vm.trabajo.tareas">
-                <a ui-sref="tarea-detail({id: tarea.id})">{{tarea.name}}</a>{{$last ? '' : ', '}}
-            </span>
-        </dd>
     </dl>
 
     <button type="submit"

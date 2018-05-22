@@ -61,7 +61,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
     @Transactional(readOnly = true)
     public Empleado findOne(Long id) {
         log.debug("Request to get Empleado : {}", id);
-        return empleadoRepository.findOne(id);
+        return empleadoRepository.findOneWithEagerRelationships(id);
     }
 
     /**

@@ -5,26 +5,26 @@
         .module('kukulkanApp')
         .controller('EmpleadoDialogController', EmpleadoDialogController);
 
-    EmpleadoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Empleado', 'Departamento', 'Direccion', 'Trabajo'];
+    EmpleadoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Empleado', 'Direccion', 'Trabajo', 'Departamento', 'Tarea'];
 
-    function EmpleadoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Empleado, Departamento, Direccion, Trabajo) {
+    function EmpleadoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Empleado, Direccion, Trabajo, Departamento, Tarea) {
         var vm = this;
 
         vm.empleado = entity;
         vm.clear = clear;
         vm.save = save;
-        vm.departamentos = Departamento.query();
-        vm.direccions = Direccion.query({filter: 'empleado-is-null'});
-        $q.all([vm.empleado.$promise, vm.direccions.$promise]).then(function() {
-            if (!vm.empleado.direccion || !vm.empleado.direccion.id) {
+        vm.addresses = Direccion.query({filter: 'empleado-is-null'});
+        $q.all([vm.empleado.$promise, vm.addresses.$promise]).then(function() {
+            if (!vm.empleado.address || !vm.empleado.address.id) {
                 return $q.reject();
             }
-            return Direccion.get({id : vm.empleado.direccion.id}).$promise;
-        }).then(function(direccion) {
-            vm.direccions.push(direccion);
+            return Direccion.get({id : vm.empleado.address.id}).$promise;
+        }).then(function(address) {
+            vm.addresses.push(address);
         });
         vm.trabajos = Trabajo.query();
-        vm.empleados = Empleado.query();
+        vm.departamentos = Departamento.query();
+        vm.tareas = Tarea.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
